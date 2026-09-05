@@ -59,13 +59,18 @@ class HomeScreen extends StatelessWidget {
         Row(
           children: [
           Container(
+            width:175 ,
+            height:250 ,
+            padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: Color(0xffE2E2E2)
+            border: Border.all(color: Color(0xffE2E2E2)),
+            
           ),
           child: Column(
             children: [
               Image.asset("assets/images/apple.png"),
+              SizedBox(height: 33),
               Text("Red Apple",style: TextStyle(
                 fontWeight: .w400,
                 fontSize: 16,
@@ -79,14 +84,15 @@ class HomeScreen extends StatelessWidget {
                 )
                 ,),
                 Row(
-                  mainAxisAlignment: .spaceBetween
-                  ,children: [
+                  
+                  children: [
                      Text( "\$4.99",style: TextStyle(
                 fontWeight: .w400,
                 fontSize: 14,
                 color: Color(0xff181725),
                 ),
                 ),
+                Spacer(),
                 FloatingActionButton(onPressed: (){ },
                 backgroundColor: Color(0xff53b175),
                 child:
