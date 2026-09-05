@@ -58,7 +58,42 @@ class HomeScreen extends StatelessWidget {
         ,
         Row(
           children: [
-          Container(
+          
+        
+Row(mainAxisAlignment: .spaceAround,
+  children: [
+ItemCard(
+image:"assets/images/apple.png" ,
+title: "Red Apple",
+description: "1kg, Price",
+price: "\$34.99",
+),
+ItemCard(
+image:"assets/images/apple.png" ,
+title: "Red Apple",
+description: "1kg, Price",
+price: "\$34.99",
+),
+          ],)
+      
+        ]
+        ,)
+        ],
+      
+    ),
+    );
+  }
+}
+class ItemCard extends StatelessWidget {
+  ItemCard({super.key,required this.image,required this.title,required this.description,required this.price});
+  String image;
+  String title;
+  String description;
+  String price;
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container(
             width:175 ,
             height:250 ,
             padding: EdgeInsets.all(15),
@@ -68,16 +103,18 @@ class HomeScreen extends StatelessWidget {
             
           ),
           child: Column(
+            crossAxisAlignment: .start,
             children: [
-              Image.asset("assets/images/apple.png"),
+              Image.asset(image,width: 100,height: 62,fit: BoxFit.cover,alignment: .center,),
               SizedBox(height: 33),
-              Text("Red Apple",style: TextStyle(
+              Text(title,style: TextStyle(
                 fontWeight: .w400,
                 fontSize: 16,
                 color: Color(0xff181725),
                 )
                 ,),
-                 Text("1kg, Price ",style: TextStyle(
+                 SizedBox(height: 33),
+                 Text(description,style: TextStyle(
                 fontWeight: .w400,
                 fontSize: 14,
                 color: Color(0xff7C7C7C),
@@ -86,27 +123,27 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   
                   children: [
-                     Text( "\$4.99",style: TextStyle(
+                     Text( price,style: TextStyle(
                 fontWeight: .w400,
                 fontSize: 14,
                 color: Color(0xff181725),
                 ),
                 ),
                 Spacer(),
-                FloatingActionButton(onPressed: (){ },
-                backgroundColor: Color(0xff53b175),
-                child:
-                 Icon(Icons.add,color: Colors.white,size: 30,),
-                
+                SizedBox(
+                  width: 45,
+                  height: 45,
+                  child: FloatingActionButton(onPressed: (){ },
+                  
+                  backgroundColor: Color(0xff53b175),
+                  child:
+                   Icon(Icons.add,color: Colors.white,size: 24,),
+                  
+                  ),
                 )
                 ],)
             ],
           ),
-          )
-        ],)
-        ],
-      
-    ),
-    );
+          );
   }
 }
