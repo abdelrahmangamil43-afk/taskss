@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_apps/home_screen.dart';
+import 'package:my_apps/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: "Test",
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
