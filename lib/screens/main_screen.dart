@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_apps/screens/explore.dart';
 
+import 'favourite_screen.dart';
 import 'my_cart_screen.dart';
 import 'home_screen.dart';
 
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> pages = [
     HomeScreen(),
     Explore(),
-    MyCartScreen(),
+    FavouriteScreen(),
     Placeholder(),
     Placeholder(),
   ];
