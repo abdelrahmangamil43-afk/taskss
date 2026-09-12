@@ -7,11 +7,13 @@ class TextFieldForm extends StatelessWidget {
     required this.keyboardType,
     this.suffixIcon,
     this.obscureText = false,
+    this.prefixIcon,
   });
   final Widget label;
   final Widget? suffixIcon;
   final TextInputType keyboardType;
   final bool obscureText;
+  final Widget? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class TextFieldForm extends StatelessWidget {
       decoration: InputDecoration(
         label: label,
         suffixIcon: suffixIcon,
-
+        prefixIcon: prefixIcon,
         labelStyle: TextStyle(color: Colors.blue),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
       ),

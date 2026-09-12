@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_apps/widgets/text_field.dart';
+import 'package:my_apps/widgets/button.dart';
+import 'package:my_apps/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -25,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 80),
+                SizedBox(height: 100),
 
                 Text(
                   "Loging",
@@ -38,7 +40,6 @@ class LoginScreen extends StatelessWidget {
 
                 SizedBox(height: 15),
 
-                // Subtitle
                 Text(
                   "Enter your email and password",
                   style: TextStyle(
@@ -48,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 55),
+                SizedBox(height: 40),
                 TextFieldForm(
                   label: Text("Email"),
                   keyboardType: TextInputType.emailAddress,
@@ -58,13 +59,15 @@ class LoginScreen extends StatelessWidget {
                 TextFieldForm(
                   label: Text("Password"),
                   keyboardType: TextInputType.visiblePassword,
-                  suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blue),
+                  suffixIcon: Icon(
+                    Icons.remove_red_eye,
+                    color: Color(0xff7C7C7C),
+                  ),
                   obscureText: true,
                 ),
 
                 SizedBox(height: 15),
 
-                // Forgot Password
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -81,28 +84,7 @@ class LoginScreen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 30),
-
-                SizedBox(
-                  width: 364,
-                  height: 67,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff53B175),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(19),
-                      ),
-                    ),
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: .w600,
-                      ),
-                    ),
-                  ),
-                ),
+                Button(text: "Log In"),
                 SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +99,14 @@ class LoginScreen extends StatelessWidget {
                     ),
 
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupScreen(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Signup",
                         style: TextStyle(
